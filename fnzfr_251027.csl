@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" delimiter-precedes-et-al="never" delimiter-precedes-last="always" default-locale="de-DE">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Albert-Ludwigs-Universität Freiburg - Geschichte der Frühen Neuzeit (Stand 14.10.2025)</title>
+    <title-short>fnzfr</title-short>
+    <id>http://www.zotero.org/styles/albert-ludwigs-universitat-freiburg-geschichte-der-fruhen-neuzeit</id>
+    <link rel="self" href="http://www.zotero.org/styles/albert-ludwigs-universitat-freiburg-geschichte-der-fruhen-neuzeit"/>
+    <author>
+      <name>Joy M. Sheik</name>
+      <email>joy.sheik@geschichte.uni-freiburg.de</email>
+      <uri>https://hcommons.org/members/joysheik/</uri>
+    </author>
+    <category field="history" citation-format="notes"/>
+    <updated>2025-10-27T13:33:28+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="de">
+    <terms>
+      <term name="editor" form="verb-short">hg. v.</term>
+      <term name="editortranslator" form="verb-short">hg. u. übers. v.</term>
+      <term name="translator" form="short">(Übers.)</term>
+      <term name="edition" form="short">Aufl.</term>
+      <term name="volume" form="short">Bd.</term>
+      <term name="in">in:</term>
+      <term name="et-al">u. a.</term>
+      <term name="ibid">ebd.</term>
+      <term name="page" form="short">S.</term>
+      <term name="page-range-delimiter">-</term>
+      <term name="editor" form="short">
+        <single>(Hg.)</single>
+        <multiple>(Hgg.)</multiple>
+      </term>
+    </terms>
+  </locale>
+  <macro name="creator-short">
+    <names variable="author">
+      <name form="short" delimiter=" / "/>
+      <substitute>
+        <names variable="editor">
+          <name form="short" delimiter=" / "/>
+        </names>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="title-short">
+    <choose>
+      <if type="book thesis" match="any">
+        <text variable="title" form="short"/>
+      </if>
+      <else>
+        <text variable="title" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="locator">
+    <choose>
+      <if locator="page">
+        <text variable="locator"/>
+      </if>
+      <else>
+        <group delimiter=" ">
+          <label variable="locator" form="short"/>
+          <text variable="locator"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+  <macro name="creator">
+    <names variable="author" suffix=":">
+      <name name-as-sort-order="first" delimiter=" / " sort-separator=", "/>
+      <substitute>
+        <names variable="editor" suffix=":">
+          <name name-as-sort-order="first" delimiter=" / " sort-separator=", "/>
+          <label form="short" prefix=" (" suffix=")"/>
+        </names>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <label form="verb-short" suffix=" "/>
+      <name delimiter=" / "/>
+    </names>
+  </macro>
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+  <macro name="series-information">
+    <choose>
+      <if variable="collection-title">
+        <group delimiter=" " prefix=" (" suffix=")">
+          <text variable="collection-title"/>
+          <group delimiter=" ">
+            <text variable="collection-number"/>
+          </group>
+        </group>
+      </if>
+    </choose>
+  </macro>
+  <macro name="publisher">
+    <group delimiter=" ">
+      <text variable="publisher-place"/>
+      <group>
+        <text macro="edition"/>
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </group>
+    </group>
+  </macro>
+  <macro name="journal-info">
+    <group delimiter=" ">
+      <text variable="container-title"/>
+      <group delimiter=",">
+        <text variable="volume"/>
+        <text variable="issue"/>
+      </group>
+      <group prefix="(" suffix=")">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </group>
+    </group>
+  </macro>
+  <macro name="container-info">
+    <group delimiter=", ">
+      <group delimiter=" ">
+        <text term="in"/>
+        <text variable="container-title"/>
+        <choose>
+          <if variable="volume">
+            <group delimiter=" ">
+              <text term="volume" form="short"/>
+              <text variable="volume"/>
+            </group>
+          </if>
+        </choose>
+      </group>
+      <text macro="editor"/>
+      <text macro="series-information"/>
+      <text macro="publisher"/>
+    </group>
+  </macro>
+  <macro name="pages">
+    <choose>
+      <if type="chapter paper-conference article-journal article-magazine article-newspaper" match="any">
+        <text variable="page"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="edition">
+    <choose>
+      <if is-numeric="edition">
+        <group delimiter=" ">
+          <number vertical-align="sup" variable="edition"/>
+        </group>
+      </if>
+      <else>
+        <text variable="edition"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="editor (Hg.) [no author]">
+    <names variable="editor">
+      <name delimiter=" / " name-as-sort-order="all"/>
+      <label form="short" prefix=" " suffix=": "/>
+    </names>
+  </macro>
+  <citation>
+    <layout delimiter="; " suffix=".">
+      <choose>
+        <if position="ibid-with-locator">
+          <group delimiter=", ">
+            <text term="ibid"/>
+            <text macro="locator"/>
+          </group>
+        </if>
+        <else-if position="ibid">
+          <text term="ibid"/>
+        </else-if>
+        <else>
+          <group delimiter=", ">
+            <text macro="creator-short"/>
+            <text macro="title-short"/>
+            <text macro="locator"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+  <bibliography hanging-indent="true" entry-spacing="0">
+    <sort>
+      <key macro="creator"/>
+      <key variable="title"/>
+    </sort>
+    <layout suffix=".">
+      <choose>
+        <if type="book manuscript report pamphlet" match="any">
+          <choose>
+            <if variable="author">
+              <group>
+                <text macro="creator"/>
+                <text value=" "/>
+                <group delimiter=", ">
+                  <group delimiter=" ">
+                    <text macro="title"/>
+                    <text macro="series-information"/>
+                  </group>
+                  <text macro="editor"/>
+                  <text macro="publisher"/>
+                </group>
+              </group>
+            </if>
+            <else>
+              <text macro="editor (Hg.) [no author]"/>
+              <group delimiter=", ">
+                <text variable="title"/>
+                <choose>
+                  <if variable="volume">
+                    <group delimiter=" ">
+                      <text term="volume" form="short"/>
+                      <text variable="volume"/>
+                    </group>
+                  </if>
+                </choose>
+              </group>
+              <group>
+                <text macro="series-information"/>
+              </group>
+              <text macro="publisher" prefix=", "/>
+            </else>
+          </choose>
+        </if>
+        <else-if type="chapter" match="any">
+          <group>
+            <text macro="creator"/>
+            <text value=" "/>
+            <group delimiter=", ">
+              <text macro="title"/>
+              <text macro="container-info"/>
+              <text macro="pages"/>
+            </group>
+          </group>
+        </else-if>
+        <else-if type="article-journal" match="any">
+          <group>
+            <text macro="creator"/>
+            <text value=" "/>
+            <group delimiter=", ">
+              <text macro="title"/>
+              <group delimiter=", ">
+                <group delimiter=" ">
+                  <text term="in"/>
+                  <text macro="journal-info"/>
+                </group>
+                <text macro="pages"/>
+              </group>
+            </group>
+          </group>
+        </else-if>
+        <else-if type="webpage" match="any">
+          <text macro="creator"/>
+          <group prefix=" ">
+            <text macro="title"/>
+            <text term="in" prefix=", " suffix=" "/>
+            <text variable="container-title"/>
+            <date form="numeric" variable="issued" prefix=" (" suffix=")"/>
+            <text variable="URL" font-style="normal" prefix=", URL: "/>
+            <date form="numeric" variable="accessed" prefix=" (Zugriff: " suffix=")"/>
+          </group>
+        </else-if>
+        <else>
+          <group>
+            <text macro="creator"/>
+            <text value=" [ITEM TYPE NOT SUPPORTED BY THIS STYLE]"/>
+            <group delimiter=", ">
+              <text macro="title"/>
+              <text macro="publisher"/>
+            </group>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
